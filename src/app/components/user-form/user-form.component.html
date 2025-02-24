@@ -1,0 +1,27 @@
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+  <label>Nome Completo:
+    <input formControlName="name" type="text" />
+  </label>
+
+  <label>E-mail:
+    <input formControlName="email" type="email" />
+  </label>
+
+  <label>Telefone:
+    <input formControlName="phone" type="text" />
+  </label>
+
+  <label>Data de Nascimento:
+    <input formControlName="birthDate" type="date" />
+  </label>
+
+  <label>Tipo de Usuário:
+    <select formControlName="userType">
+      <option value="Administrador">Administrador</option>
+      <option value="Editor">Editor</option>
+      <option value="Visualizador">Visualizador</option>
+    </select>
+  </label>
+
+  <button type="submit" [disabled]="userForm.invalid">Salvar</button>
+</form>
